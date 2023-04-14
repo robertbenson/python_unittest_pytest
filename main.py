@@ -2,7 +2,7 @@
 from Exception7Wheel import Exception7Wheel
 
 class Car:
-    # A car object has drive, wheel and colour attributes                                                   v
+    # A car object has drive, wheel and color attributes                                                   v
     def __init__(self, drive, wheel, color):
         self.drive= drive
         if type(wheel) not in [int, float]:
@@ -28,6 +28,7 @@ class Car:
 
 
 def make_car(drive, wheels , color='gold'):
+    # make car using attributes provided
     try:
         car = Car(drive, wheels, color)
         car.getCarDetails()
