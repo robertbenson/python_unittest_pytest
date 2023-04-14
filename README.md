@@ -8,6 +8,14 @@ The factory can make cars with 2 to 10 wheels, but not 7 wheels.
 The owner had a bad experience in a 7 wheeler and has banned them.
 
 The wheel parameter must be an integer or float.
+
+## TDD - Test-driven development 
+
+Red — think about what you want to develop, make a failing test
+
+Green — think about how to make your tests pass
+
+Refactor — think about how to improve your existing implementation
  
 
 ## pytest - a testing framework
