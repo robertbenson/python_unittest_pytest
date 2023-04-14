@@ -1,13 +1,19 @@
 # Python unittest pytest example
 
 This is a simple example that shows how to unittest, pytest a class.
+
 It's a Car class that takes drive, wheels and color as attributes.
 
 The factory can make cars with 2 to 10 wheels, but not 7 wheels. 
 
 The owner had a bad experience in a 7 wheeler and has banned them.
 
-The wheel parameter must be an integer or float.
+The wheel attribute must be an integer or float.
+
+# Working code
+main.py - a small program to create car objects
+
+testClass.py - a test class to unittest the car class used in main.py
 
 ## TDD - Test-driven development 
 

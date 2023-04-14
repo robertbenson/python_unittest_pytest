@@ -1,4 +1,3 @@
-# This is a sample Python script.
 from Exception7Wheel import Exception7Wheel
 
 class Car:
