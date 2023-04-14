@@ -19,9 +19,9 @@ The unit testing is in the testClass.py file
     
 
 ```python
-        def test_PYTEST_invalid_wheels_gt_10_valueError(self):
-            with pytest.raises(ValueError, match="Wheels must be 10 or less: 11"):
-                carWheelsInvalidlt1 = Car('manual', 11, 'blue')
+    def test_PYTEST_invalid_wheels_gt_10_valueError(self):
+        with pytest.raises(ValueError, match="Wheels must be 10 or less: 11"):
+            carWheelsInvalidlt1 = Car('manual', 11, 'blue')
 ```
 
 ## Exceptions  - wrap objects to detect exceptions
