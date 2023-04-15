@@ -4,11 +4,12 @@ This is a simple example that shows how to unittest, pytest a class.
 
 It's a Car class that takes drive, wheels and color as attributes.
 
-The factory can make cars with 2 to 10 wheels, but not 7 wheels. 
+The Car factory can make cars with 2 to 10 wheels, but not 7 wheels. 
 
 The owner had a bad experience in a 7 wheeler and has banned them.
 
 The wheel attribute must be an integer or float.
+The color must be a string.
 
 # Working code
 main.py - a small program to create car objects
