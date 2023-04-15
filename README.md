@@ -14,35 +14,11 @@ The color must be a string.
 # Working code
 
 
-main.py - how to use dataclass using car example   
-car.py - car dataclass
-```python 
-@dataclass
-class Car:
-    drive: str
-    wheels: int
-    color: str
+main.py - how to use dataclass using car example
 
-    def __post_init__(self):
-        if not isinstance(self.drive, str):
-            raise TypeError('Drive should be of type str')
+Car.py - car dataclass
 
-        if not isinstance(self.color, str):
-            raise TypeError('Color should be of type str')
-
-        if not isinstance(self.wheels, (int,float) ):
-            msg = 'Wheels should be of type int or float: value passed was {}'.format(self.wheels)
-            raise TypeError(msg)
-
-        if self.wheels < 2 or self.wheels > 10:
-            msg = 'Wheels must be 2 - 10: value passed was {}'.format(self.wheels)
-            raise ValueError(msg)
-
-        if self.wheels == 7:
-            raise ValueError('Wheels must not be 7 !!!!!')
-```
-
-TestCar.py - unittest and pytests
+CarTest.py - unittest and pytests
 
 ## TDD - Test-driven development 
 
@@ -107,14 +83,15 @@ car made successfully Car(drive='auto', wheels=5, color='gold')
 # Output - from TestCar.py
 ```
 ============================= test session starts =============================
-collecting ... collected 7 items
+collecting ... collected 8 items
 
-TestCar.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError PASSED  [ 14%]
-TestCar.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError PASSED   [ 28%]
-TestCar.py::TestCar::test_typeerror_wheels PASSED                        [ 42%]
-TestCar.py::TestCar::test_valid_car_wheels_float PASSED                  [ 57%]
-TestCar.py::TestCar::test_valid_car_wheels_int PASSED                    [ 71%]
-TestCar.py::TestCar::test_valueerror_wheels_1 PASSED                     [ 85%]
-TestCar.py::TestCar::test_valueerror_wheels_11 PASSED                    [100%]
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_7 
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError 
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError 
+TestCar.py::TestCar::test_typeerror_wheels 
+TestCar.py::TestCar::test_valid_car_wheels_float 
+TestCar.py::TestCar::test_valid_car_wheels_int 
+TestCar.py::TestCar::test_valueerror_wheels_1 
+TestCar.py::TestCar::test_valueerror_wheels_11 
 
-======================== 7 passed, 1 warning in 0.02s =========================
+======================== 8 passed, 1 warning in 0.02s =========================

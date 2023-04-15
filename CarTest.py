@@ -27,6 +27,11 @@ class TestCar(TestCase):
         with pytest.raises(ValueError, match="Wheels must be 2 - 10: value passed was 11"):
             carWheelsInvalidlt1 = Car('manual', 11, 'blue')
 
+    def test_PYTEST_invalid_wheels_7(self):
+        # check the actual message thrown by valueError
+        with pytest.raises(ValueError, match="Wheels must not be 7 !!!!!"):
+            carWheelsInvalidlt1 = Car('manual', 7, 'blue')
+
     def test_valid_car_wheels_float(self):
         carBlue = Car('manual', 3.0, 'blue')
         # print(carRed.colour)
