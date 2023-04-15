@@ -12,9 +12,7 @@ The wheel attribute must be an integer or float.
 The color must be a string.
 
 # Working code
-main.py - a small program to create car objects
 
-testClass.py - a test class to unittest the car class used in main.py
 
 carDataclass.py - how to use dataclass using car example       
 
