@@ -25,6 +25,7 @@ def main():
     make_car('manual', 1, 1234)         # will raise        exception , type error
 
     make_car('auto', 4, 'grey')  # will make a valid car
+    make_car('auto', 3.0, 'purple')  # will make a valid car
 
 if __name__ == '__main__':
     main()

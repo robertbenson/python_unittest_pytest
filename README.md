@@ -100,18 +100,20 @@ TypeError raised:  Wheels should be of type int or float: value passed was 1a
 ValueError raised: Wheels must be 2 - 10: value passed was 12
 ValueError raised: Wheels must be 2 - 10: value passed was 1
 TypeError raised:  Color should be of type str
-car made successfully Car(drive='auto', wheels=4, color='grey') 
+car made successfully Car(drive='auto', wheels=4, color='grey')
+car made successfully Car(drive='auto', wheels=3.0, color='purple')
 ``` 
 # Output - from TestCar.py
 ```
 ============================= test session starts =============================
-collecting ... collected 6 items
+collecting ... collected 7 items
 
-TestCar.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError 
-TestCar.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError 
-TestCar.py::TestCar::test_typeerror_wheels 
-TestCar.py::TestCar::test_valid_car 
-TestCar.py::TestCar::test_valueerror_wheels_1 
-TestCar.py::TestCar::test_valueerror_wheels_11 
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError PASSED  [ 14%]
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError PASSED   [ 28%]
+TestCar.py::TestCar::test_typeerror_wheels PASSED                        [ 42%]
+TestCar.py::TestCar::test_valid_car_wheels_float PASSED                  [ 57%]
+TestCar.py::TestCar::test_valid_car_wheels_int PASSED                    [ 71%]
+TestCar.py::TestCar::test_valueerror_wheels_1 PASSED                     [ 85%]
+TestCar.py::TestCar::test_valueerror_wheels_11 PASSED                    [100%]
 
-======================== 6 passed, 1 warning in 0.02s =========================
+======================== 7 passed, 1 warning in 0.02s =========================
