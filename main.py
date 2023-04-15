@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from Exception7Wheel import Exception7Wheel
-from car import Car
+from Car import Car
 
 
 def make_car(drive, wheels , color='gold'):
@@ -18,7 +18,7 @@ def make_car(drive, wheels , color='gold'):
 
 def main():
 
-    make_car('manual', 7, 'red')  # will raise custom exception
+    make_car('manual', 7, 'red')        # will raise custom exception
     make_car('manual', '1a', 'yellow')  # will raise        exception , type error
     make_car('manual', 12, 'blue')      # will raise        exception , value error
     make_car('manual', 1, 'blue')       # will raise        exception , value error

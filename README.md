@@ -14,7 +14,35 @@ The color must be a string.
 # Working code
 
 
-carDataclass.py - how to use dataclass using car example       
+carDataclass.py - how to use dataclass using car example   
+car.py - car dataclass
+```python 
+@dataclass
+class Car:
+    drive: str
+    wheels: int
+    color: str
+
+    def __post_init__(self):
+        if not isinstance(self.drive, str):
+            raise TypeError('Drive should be of type str')
+
+        if not isinstance(self.color, str):
+            raise TypeError('Color should be of type str')
+
+        if not isinstance(self.wheels, (int,float) ):
+            msg = 'Wheels should be of type int or float: value passed was {}'.format(self.wheels)
+            raise TypeError(msg)
+
+        if self.wheels < 2 or self.wheels > 10:
+            msg = 'Wheels must be 2 - 10: value passed was {}'.format(self.wheels)
+            raise ValueError(msg)
+
+        if self.wheels == 7:
+            raise ValueError('Wheels must not be 7 !!!!!')
+```
+
+TestCar.py - unittest and pytests
 
 ## TDD - Test-driven development 
 
@@ -46,58 +74,44 @@ The unit testing is in the testClass.py file
 ```python
     try:
         car = Car(drive, wheels, color)
-        car.getCarDetails()
+        print('car made successfully' , car)
     except ValueError as v:
         print('ValueError raised:', v)
     except TypeError as t:
         print('TypeError raised: ', t)
+    except Exception7Wheel as e:
+        print('No 7 wheel cars allowed!!! : ', e)
     
 ```
 
-### Custom Exception
-
-#### define it (Exception7Wheel.py)
+### Custom Exception (Exception7Wheel.py)
 
 ```python
     class Exception7Wheel(Exception):
     pass
 ```
 
-#### raise it
-```python
-    if wheel == 7:
-        msg = "Wheels must not be 7, number wheels: " + str(wheel)
-        raise Exception7Wheel(msg)
-```
-#### catch it
 
-```python
-    try:
-        car = Car('manual', 7, 'red')
-    except Exception7Wheel:
-        print('No 7 wheel cars allowed!!!')
-```
+
 # Output - from main.py
 ```
-No 7 wheel cars allowed!!! :  Wheels must not be 7, #wheels : 7
-TypeError raised:  Wheels must be integers or floats, wheel value passed: 1a
-ValueError raised: Wheels must be 10 or less, #wheels :  12
-ValueError raised: Wheels must be 2 or more, #wheels : 1
-Car was made: Drive is manual  #Wheels : 4  Color : grey 
+ValueError raised: Wheels must not be 7 !!!!!
+TypeError raised:  Wheels should be of type int or float: value passed was 1a
+ValueError raised: Wheels must be 2 - 10: value passed was 12
+ValueError raised: Wheels must be 2 - 10: value passed was 1
+TypeError raised:  Color should be of type str
+car made successfully Car(drive='auto', wheels=4, color='grey') 
 ``` 
-# Output - from testClass.py
+# Output - from TestCar.py
 ```
 ============================= test session starts =============================
-collecting ... collected 9 items
+collecting ... collected 6 items
 
-testClass.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError PASSED [ 11%]
-testClass.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError PASSED [ 22%]
-testClass.py::TestCar::test_blue_car_float PASSED                        [ 33%]
-testClass.py::TestCar::test_get_number_wheels PASSED                     [ 44%]
-testClass.py::TestCar::test_invalid_7_wheels PASSED                      [ 55%]
-testClass.py::TestCar::test_invalid_wheels_gt_10_valueError PASSED       [ 66%]
-testClass.py::TestCar::test_invalid_wheels_invalid_type_error PASSED     [ 77%]
-testClass.py::TestCar::test_invalid_wheels_lt_2_pytest_message PASSED    [ 88%]
-testClass.py::TestCar::test_manual_red_4_car PASSED                      [100%]
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_gt_10_valueError 
+TestCar.py::TestCar::test_PYTEST_invalid_wheels_lt_2_valueError 
+TestCar.py::TestCar::test_typeerror_wheels 
+TestCar.py::TestCar::test_valid_car 
+TestCar.py::TestCar::test_valueerror_wheels_1 
+TestCar.py::TestCar::test_valueerror_wheels_11 
 
-============================== 9 passed in 0.01s ==============================
+======================== 6 passed, 1 warning in 0.02s =========================

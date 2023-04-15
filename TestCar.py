@@ -1,10 +1,10 @@
 from unittest import TestCase
 import pytest
 
-from car import Car
+from Car import Car
 
 
-class carTest(TestCase):
+class TestCar(TestCase):
 
     def test_typeerror_wheels(self):
         with self.assertRaises(TypeError):
