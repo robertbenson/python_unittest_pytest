@@ -1,4 +1,4 @@
-# Python unittest pytest example
+# Python dataclass unittest pytest example
 
 This is a simple example that shows how to unittest, pytest a class.
 
