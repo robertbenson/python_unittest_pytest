@@ -14,7 +14,7 @@ The color must be a string.
 # Working code
 
 
-carDataclass.py - how to use dataclass using car example   
+main.py - how to use dataclass using car example   
 car.py - car dataclass
 ```python 
 @dataclass
