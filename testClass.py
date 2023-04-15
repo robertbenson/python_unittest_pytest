@@ -5,6 +5,15 @@ import unittest
 import pytest
 
 class TestCar(unittest.TestCase):
+    def test_creare_car_minimum(self):
+        carWheelsInvalidlt1 = Car('', 4, '')
+        self.assertIsNotNone(carWheelsInvalidlt1.drive)
+        self.assertIsNotNone(carWheelsInvalidlt1.wheels)
+        self.assertIsNotNone(carWheelsInvalidlt1.color)
+    def test_creare_car_color_isString(self):
+        carWheelsInvalidlt1 = Car('', 4, '')
+        self.assertIsInstance(carWheelsInvalidlt1.color,str)
+
     def test_get_number_wheels(self):
         carWheelsInvalidlt1 = Car('manual', 4, 'blue')
         assert carWheelsInvalidlt1.number_wheels() == 4
@@ -19,18 +28,18 @@ class TestCar(unittest.TestCase):
 
     def test_invalid_wheels_lt_2_pytest_message(self):
         # check same attributes, but this time check message produced
-        with pytest.raises(ValueError, match="Wheels must be 2 or more, #wheels : 1"):
+        with pytest.raises(ValueError, match="Wheels must be 2 - 10, #wheels : 1"):
             carWheelsInvalidlt1 = Car('manual', 1, 'blue')
 
 
     def test_PYTEST_invalid_wheels_lt_2_valueError(self):
         # check the actual message thrown by valueError
-        with pytest.raises(ValueError, match="Wheels must be 2 or more, #wheels : 1"):
+        with pytest.raises(ValueError, match="Wheels must be 2 - 10, #wheels : 1"):
             carWheelsInvalidlt1 = Car('manual', 1, 'blue')
 
     def test_PYTEST_invalid_wheels_gt_10_valueError(self):
         # check the actual message thrown by valueError
-        with pytest.raises(ValueError, match="Wheels must be 10 or less, #wheels :  11"):
+        with pytest.raises(ValueError, match="Wheels must be 2 - 10, #wheels : 11"):
             carWheelsInvalidlt1 = Car('manual', 11, 'blue')
 
     def test_invalid_wheels_invalid_type_error(self):

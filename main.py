@@ -7,11 +7,11 @@ class Car:
         if type(wheel) not in [int, float]:
             msg = "Wheels must be integers or floats, wheel value passed: " + str(wheel)
             raise TypeError(msg)
-        if wheel < 2:
-            msg = "Wheels must be 2 or more, #wheels : " + str(wheel)
-            raise ValueError(msg)
-        if wheel > 10:
-            msg = "Wheels must be 10 or less, #wheels :  " + str(wheel)
+        if type(color) is not str:
+            msg = "color must be string, color value passed was: " + str(color)
+            raise TypeError(msg)
+        if wheel < 2 or wheel > 10 :
+            msg = "Wheels must be 2 - 10, #wheels : " + str(wheel)
             raise ValueError(msg)
         if wheel == 7:
             msg = "Wheels must not be 7, #wheels : " + str(wheel)
@@ -44,6 +44,7 @@ def main():
     make_car('manual','1a','yellow')    # will raise        exception , type error
     make_car('manual',12,'blue')        # will raise        exception , value error
     make_car('manual',1,'blue')         # will raise        exception , value error
+    make_car('manual',1,1234)           # will raise        exception , type error
 
 
     make_car('manual',4,'grey')         # will make a valid car
