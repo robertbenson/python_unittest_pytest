@@ -18,14 +18,15 @@ def make_car(drive, wheels , color='gold'):
 
 def main():
 
-    make_car('manual', 7, 'red')        # will raise custom exception
-    make_car('manual', '1a', 'yellow')  # will raise        exception , type error
-    make_car('manual', 12, 'blue')      # will raise        exception , value error
-    make_car('manual', 1, 'blue')       # will raise        exception , value error
-    make_car('manual', 1, 1234)         # will raise        exception , type error
+    make_car('manual', 7, 'red')        # will raise exception , custom Exception7Wheel
+    make_car('manual', '1a', 'yellow')  # will raise exception , type error
+    make_car('manual', 12, 'blue')      # will raise exception , value error
+    make_car('manual', 1, 'blue')       # will raise exception , value error
+    make_car('manual', 1, 1234)         # will raise exception , type error
 
-    make_car('auto', 4, 'grey')  # will make a valid car
-    make_car('auto', 3.0, 'purple')  # will make a valid car
+    make_car('auto', 4, 'grey')         # will make a valid car
+    make_car('auto', 3.0, 'purple')     # will make a valid car
+    make_car('auto', 5)                 # will make a valid car, default gold
 
 if __name__ == '__main__':
     main()

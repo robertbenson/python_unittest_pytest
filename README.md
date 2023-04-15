@@ -102,6 +102,7 @@ ValueError raised: Wheels must be 2 - 10: value passed was 1
 TypeError raised:  Color should be of type str
 car made successfully Car(drive='auto', wheels=4, color='grey')
 car made successfully Car(drive='auto', wheels=3.0, color='purple')
+car made successfully Car(drive='auto', wheels=5, color='gold')
 ``` 
 # Output - from TestCar.py
 ```
